@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebServlet;
 
 // Java Platform, Enterprise Edition(Java EE) JEE 7
 
-@WebServlet(urlPatterns = "/login")
+@WebServlet(value = "/login")
 public class LoginServlet extends HttpServlet {
 
 	/**
@@ -23,6 +23,8 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 												throws IOException, ServletException {
+		request.setAttribute("name", request.getParameter("name"));
+		request.setAttribute("password", request.getParameter("password"));
 		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 	}
 }
