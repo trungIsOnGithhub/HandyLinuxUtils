@@ -35,7 +35,7 @@
 					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.2</version>
 					<configuration>
-						<path>/</path>
+						<path>/qotd</path>
 						<contextReloadable>true</contextReloadable>
 					</configuration>
 				</plugin>
