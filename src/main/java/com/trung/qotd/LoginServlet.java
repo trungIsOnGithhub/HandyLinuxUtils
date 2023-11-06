@@ -1,4 +1,4 @@
-package qotd;
+package com.trung.qotd;
 
 import java.io.IOException;
 
@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 
 import javax.servlet.annotation.WebServlet;
+
+// Java Platform, Enterprise Edition(Java EE) JEE 7
 
 @WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
