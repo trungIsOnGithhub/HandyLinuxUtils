@@ -6,6 +6,12 @@ public class Quote extends MyEntity {
 	
 	private String contributor;
 	
+	public Quote(String title, String body, String contributor) {
+		this.title = title;
+		this.body = body;
+		this.contributor = contributor;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -26,5 +32,10 @@ public class Quote extends MyEntity {
 	}
 	public void setContributor(String contributor) {
 		this.contributor = contributor;
+	}
+	
+	@Override
+	public String toString() {
+		return this.body;
 	}
 }
