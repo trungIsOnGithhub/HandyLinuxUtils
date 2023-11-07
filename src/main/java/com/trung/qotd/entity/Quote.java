@@ -1,5 +1,30 @@
 package com.trung.qotd.entity;
 
-public class Quote {
-
+public class Quote extends MyEntity {
+	private String title;
+	private String body;
+	
+	private String contributor;
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	
+	public String getBody() {
+		return body;
+	}
+	public void setBody(String body) {
+		this.body = body;
+	}
+	
+	public String getContributor() {
+		return contributor;
+	}
+	public void setContributor(String contributor) {
+		this.contributor = contributor;
+	}
 }
