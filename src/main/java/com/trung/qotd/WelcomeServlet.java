@@ -35,15 +35,26 @@ public class WelcomeServlet extends HttpServlet {
 
 		if ( !AuthenService.validUsername(requestUsername) ) {
 			resourcesView = "/WEB-INF/views/error.jsp";
+			
+			response.sendRedirect("welcome.jsp");
+
+			return;
 		}
 		
 		System.out.println(requestUsername);
 		System.out.println(resourcesView);
-		
+
+
+		Cookie loginCookie = new Cookie("usr_name",user);
+		//setting cookie to expiry in 1 hour
+		loginCookie.setMaxAge(60*60);
+
+		response.addCookie(loginCookie);
+
 		List<Quote> recentQuotes = quoteDAO.getMany(10);
 		
 		request.setAttribute("recent_quotes", recentQuotes);
-		
-		request.getRequestDispatcher(resourcesView).forward(request, response);
+
+		response.sendRedirect("welcome.jsp");
 	}
 }
