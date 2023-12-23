@@ -1,9 +1,9 @@
 name: testCI
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "maven-generic" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "maven-generic" ]
   workflow_dispatch:
 
 jobs:
