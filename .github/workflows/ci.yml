@@ -1,0 +1,21 @@
+name: testCI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'adopt-hotspot'
+        java-version: '17'
+    - name: Get Java version
+      run: java --version
+    - name: Get Java Compiler version
+      run: javac --version
